@@ -1,3 +1,4 @@
+from tkcalendar import DateEntry
 import tkinter as tk
 from tkinter import messagebox
 from datetime import datetime, timedelta
@@ -54,27 +55,23 @@ janela.geometry("400x600")
 resultado = tk.StringVar()
 
 tk.Label(janela, text="Diferença entre datas").pack()
-entrada_data1 = tk.Entry(janela)
+entrada_data1 = DateEntry(janela, date_pattern='dd/mm/yyyy')
 entrada_data1.pack()
-entrada_data1.insert(0, "dd/mm/aaaa")
-entrada_data2 = tk.Entry(janela)
+entrada_data2 = DateEntry(janela, date_pattern='dd/mm/yyyy')
 entrada_data2.pack()
-entrada_data2.insert(0, "dd/mm/aaaa")
 tk.Button(janela, text="Calcular Diferença", command=calcular_diferenca).pack(pady=5)
 
 tk.Label(janela, text="Somar Dias").pack()
-entrada_data_somar = tk.Entry(janela)
+entrada_data_somar = DateEntry(janela, date_pattern='dd/mm/yyyy')
 entrada_data_somar.pack()
-entrada_data_somar.insert(0, "dd/mm/aaaa")
 entrada_qtd_somar = tk.Entry(janela)
 entrada_qtd_somar.pack()
 entrada_qtd_somar.insert(0, "Quantos dias")
 tk.Button(janela, text="Somar Dias", command=somar_dias).pack(pady=5)
 
 tk.Label(janela, text="Subtrair Dias").pack()
-entrada_data_subtrair = tk.Entry(janela)
+entrada_data_subtrair = DateEntry(janela, date_pattern='dd/mm/yyyy')
 entrada_data_subtrair.pack()
-entrada_data_subtrair.insert(0, "dd/mm/aaaa")
 entrada_qtd_subtrair = tk.Entry(janela)
 entrada_qtd_subtrair.pack()
 entrada_qtd_subtrair.insert(0, "Quantos dias")
